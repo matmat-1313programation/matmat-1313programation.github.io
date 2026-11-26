@@ -1,0 +1,3 @@
+const menuButton=document.querySelector('.menu-toggle');const nav=document.querySelector('.main-nav');if(menuButton&&nav){menuButton.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open));menuButton.textContent=open?'✕':'☰';});}
+const themeButton=document.querySelector('.theme-toggle');if(themeButton){const saved=localStorage.getItem('mat-theme');if(saved==='light')document.body.classList.add('light');themeButton.addEventListener('click',()=>{document.body.classList.toggle('light');localStorage.setItem('mat-theme',document.body.classList.contains('light')?'light':'dark');});}
+document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().getFullYear());
